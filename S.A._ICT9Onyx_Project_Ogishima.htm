@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Mogra&display=swap" rel="stylesheet">
+	<title></title>
+	<style type="text/css">
+		.circle {
+  				width: 700px;
+  				height: 500px;
+  				border-radius: 20%;
+  				background-color: white;
+  				margin: 0 auto;
+				}
+
+		body 	{
+				background-color:#899aa0;
+				text-align: center;
+				}
+
+		form	{
+				font-family: 'Mogra', cursive;
+				position: fixed;
+				top: 200px;
+				bottom: 200px;
+				left: 200px;
+				right: 200px;
+				}
+
+		.inches	{
+				size: 30px;
+				}
+
+		h1		{
+				font-family: 'Mogra', cursive;
+				font-size: 50px;
+
+				}
+	</style>
+
+	
+</head>
+<body>
+
+	<div class="circle">
+
+		<h1 class="text-center">Unit Converter</h1>	
+
+        	<label>
+            	<h3>Select Measurement</h3>
+        	</label>
+    	
+        		<form>
+
+					<label for="length" class="inches">Length (in mm):</label>
+						<input type="text" id="length" name="length">
+
+					<br><br>
+
+					<label for="centimeters">Centimeters:</label>
+						<input type="text" id="centimeters" name="centimeters" readonly>
+
+					<br><br>
+
+					<label for="inches">Inches:</label>
+						<input type="text" id="inches" name="inches" readonly>
+
+					<br><br>
+
+					<button onclick="convertLength()">Convert</button>
+
+				</form>
+	</div>
+
+	<script>
+		function convertLength() {
+			const length = document.getElementById("length").value;
+
+			const centimeters = length / 10;
+			document.getElementById("centimeters").value = centimeters.toFixed(2);
+
+			const inches = length / 25.4;
+			document.getElementById("inches").value = inches.toFixed(2);
+		}
+	</script>
+
+
+
+</body>
+</html>
